@@ -22,8 +22,6 @@
   background-color: red;
 }
 
-.result-container div
-.App-link {
+.result-container div .App-link {
   color: #61dafb;
 }
-
