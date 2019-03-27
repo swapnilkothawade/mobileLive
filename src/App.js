@@ -24,12 +24,14 @@ class App extends Component {
 
   cycle = (current, imove, start, end) => {
     
+    // find the item index
     let index = this.state.arrayItems.findIndex(ele => {
       return parseInt(ele) === parseInt(current);
     });
 
     console.log(index);
 
+    // error incase the current element not found
     if (index === -1) {
       this.setState({
         isInvalid: true
@@ -39,18 +41,19 @@ class App extends Component {
 
     index = index + parseInt(imove, 10);
     if (index < 0) {
-    // is the logic for negative circular dependency if exceeds length of array
+    // negative circular dependency
       index = (index % (this.state.arrayItems.length)) + (this.state.arrayItems.length);
     }
-    // is the logic for possitive circular dependency if exceeds length of array
+    // positive circular dependency
     index = index % (this.state.arrayItems.length);
     console.log(index);
-        
+    
     this.setState({
       finalPosition: index
     });
   }
 
+  // array duplicate validation
   isDuplicate = array => {
     return (new Set(array)).size !== array.length;
   }
@@ -61,6 +64,7 @@ class App extends Component {
       isInvalid: false
     });
 
+    // match the input string for validation
     const regexpr = new RegExp('[0-9]+(,[0-9]+)*');
 
     if (!this.state.arrayElements.match(regexpr)) {
@@ -70,6 +74,7 @@ class App extends Component {
       return;
     }
 
+    //create an array from the input string
     const arrayItems = [];
     this.state.arrayElements.split(',').map((ele) => {
       return arrayItems.push(parseInt(ele, 10));
