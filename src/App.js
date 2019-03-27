@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Input from "./components/Input";
 
 class App extends Component {
   constructor(props) {
@@ -104,16 +105,10 @@ class App extends Component {
                 <div className="col"></div>
                 <div className="col">
                     <form onSubmit={(event) => this.handleSubmit(event)}>
-                        <div className="input-group mb-3">
-                            <input type="text" name="arrayElements" value={this.state.arrayElements} className={`form-control`} placeholder="Enter comma seperated Array Elements" onChange={ (event) => this.handleChange(event) } />
-                        </div>
+                        <Input type="text" name="arrayElements" value={this.state.arrayElements} className="form-control" placeholder="Enter comma seperated Array Elements" onChange={ (event) => this.handleChange(event) } />
                         <div className="danger text-left">{this.state.isInvalid ? <div>The array elements should be unique</div> : null}</div>
-                        <div className="input-group mb-3">
-                            <input type="number" name="currentElement" value={this.state.currentElement} className="form-control" placeholder="Enter Current Element" onChange={ (event) => this.handleChange(event) }/>
-                        </div>
-                        <div className="input-group mb-3">
-                            <input type="number" name="increment" value={this.state.increment} className="form-control" placeholder="Enter Increment or Decrement" onChange={ (event) => this.handleChange(event) }/>
-                        </div>
+                        <Input type="number" name="currentElement" value={this.state.currentElement} className="form-control" placeholder="Enter Current Element" onChange={ (event) => this.handleChange(event) }/>
+                        <Input type="number" name="increment" value={this.state.increment} className="form-control" placeholder="Enter Increment or Decrement" onChange={ (event) => this.handleChange(event) }/>
                         <div className="input-group mb-3">
                             <input type="submit" value="Submit" className="btn btn-primary" />
                         </div>
