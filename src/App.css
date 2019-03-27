@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  padding: 3%;
+}
+
+.result-container div {
+  display: inline-block;
+  padding: 1.5rem;
+  background-color: gray;
+  margin: 0.5rem;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.result-container div.final-position {
+  background-color: green;
+}
+
+.result-container div.current-position {
+  background-color: red;
+}
+
+.result-container div
+.App-link {
+  color: #61dafb;
+}
+
